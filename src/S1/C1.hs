@@ -3,12 +3,8 @@
 -- Convert hex to base64
 module S1.C1 where
 
-import Data.Char
 import Data.Word
-import Data.Foldable (foldl')
-import Data.ByteString (ByteString)
 import qualified Data.List as L
-import Text.Read (readMaybe)
 
 -- This
 -- testInput = "49276d206b696c6c96e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"

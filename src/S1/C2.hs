@@ -13,11 +13,10 @@ module S1.C2 where
 
 import Control.Error
 
-import Data.Text (Text)
 import Data.Word
 import Data.Bits
 
-import S1.C1 (hexToBinary, hexValueToBinary, binaryToNewBase)
+import S1.C1 (hexValueToBinary, binaryToNewBase)
 
 data C2Error
   = InvalidHexValue Char 

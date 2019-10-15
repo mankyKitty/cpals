@@ -1,26 +1,17 @@
 {-# LANGUAGE OverloadedStrings #-}
 module S1.C5 where
 
-import Control.Lens
-
-import Data.Function
-
 import Data.ByteString (ByteString)
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as B8
 
-import qualified Data.List as L
-
 import Data.Foldable
-import Data.Char
-import Data.Bifunctor
 import Data.Word
 import Data.Bits
 
 import qualified S1.C1 as C
 import qualified S1.C2 as C
 import qualified S1.C3 as C
-import qualified S1.C4 as C
 
 -- Implement repeating-key XOR
 -- Here is the opening stanza of an important work of the English language:
@@ -58,10 +49,8 @@ bytestringtohexstring = fmap B8.pack . (fmap . fmap) ((C.hexChars !!) . fromInte
 
 mkHexWord8 :: [Bool] -> Either C5Error Word8
 mkHexWord8 xs | length xs /= 4 = Left InvalidLengthBitList
-              | otherwise =
-                let [a,b,c,d] = xs
-                in pure . set 3 a . set 2 b . set 1 c . set 0 d $ zeroBits
-                -- pure $ ifoldr (\i -> set i) zeroBits xs
+              | otherwise = let [a,b,c,d] = xs
+                            in pure . set 3 a . set 2 b . set 1 c . set 0 d $ zeroBits
   where
     set i True  = (`setBit` i)
     set _ False = id

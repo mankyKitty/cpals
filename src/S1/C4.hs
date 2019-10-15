@@ -4,20 +4,10 @@ module S1.C4 where
 import Control.Lens
 
 import Data.Function
-
 import Data.ByteString (ByteString)
-import qualified Data.ByteString as BS
-import qualified Data.ByteString.Char8 as B8
 
 import qualified Data.List as L
 
-import Data.Char
-import Data.Bifunctor
-import Data.Word
-import Data.Bits
-
-import qualified S1.C1 as C
-import qualified S1.C2 as C
 import qualified S1.C3 as C
 
 -- Detect single-character XOR
